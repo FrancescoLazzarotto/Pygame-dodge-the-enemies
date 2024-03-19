@@ -1,2 +1,2 @@
 # Pygame-dodge-the-enemies
-A simple dodge game developed using Pygame. Dodge enemies while navigating the screen and try to survive as long as possible
+This repository contains a Python script for a simple game developed using Pygame. In this game, the player controls a character that must dodge enemies while moving around the screen. The enemies move randomly, posing a challenge to the player's ability to navigate and avoid collisions. The game features basic collision detection, score tracking, and a game-over screen displaying the player's score in seconds. Comments in the code and messages in the game are in italian.
