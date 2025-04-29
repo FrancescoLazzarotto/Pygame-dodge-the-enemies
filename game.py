@@ -1,24 +1,24 @@
 import pygame
 import random
 
-# Inizializzazione di Pygame
+
 pygame.init()
 
-# Impostazioni di base del gioco
+#impostazioni di base del gioco
 WIDTH, HEIGHT = 800, 600
 FPS = 60
 
-# Definizione dei colori
+#definizione dei colori
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
-# Creazione della finestra di gioco
+#creazione della finestra di gioco
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Gioco Complesso")
 
-# Definizione della classe giocatore
+#definizione della classe giocatore
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -53,7 +53,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.top < 0:
             self.rect.top = 0
 
-# Definizione della classe nemico
+#definizione della classe nemico
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -73,7 +73,7 @@ class Enemy(pygame.sprite.Sprite):
             self.rect.y = random.randrange(-100, -40)
             self.speedy = random.randrange(1, 3)
 
-# Creazione di tutti gli sprite
+#creazione di tutti gli sprite
 all_sprites = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
 player = Player()
@@ -83,7 +83,7 @@ for _ in range(10):
     all_sprites.add(enemy)
     enemies.add(enemy)
 
-# Loop di gioco
+#loop di gioco
 running = True
 clock = pygame.time.Clock()
 while running:
@@ -92,15 +92,15 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Aggiornamento
+    
     all_sprites.update()
 
-    # Collisioni tra nemici e giocatore
+    #collisioni tra nemici e giocatore
     hits = pygame.sprite.spritecollide(player, enemies, False)
     if hits:
         player.image.fill(GREEN)
 
-    # Renderizzazione
+    #renderizzazione
     screen.fill(WHITE)
     all_sprites.draw(screen)
     pygame.display.flip()
