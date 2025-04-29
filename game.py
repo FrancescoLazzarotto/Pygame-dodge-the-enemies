@@ -16,7 +16,7 @@ GREEN = (0, 255, 0)
 
 #creazione della finestra di gioco
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Gioco Complesso")
+pygame.display.set_caption("Gioco: schiva i nemici")
 
 #definizione della classe giocatore
 class Player(pygame.sprite.Sprite):
